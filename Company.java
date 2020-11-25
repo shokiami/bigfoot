@@ -1,5 +1,12 @@
+import java.io.FileNotFoundException;
+
 public class Company implements ProductTrait{
-    public Company() {
+    private String name;
+    private Map<String, Integer> companyEmissions;
+
+    public Company(String name) throws FileNotFoundException {
+        Scanner input = new Scanner(new File("companies.tsv"));
+        
         
     }
 
