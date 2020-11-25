@@ -1,4 +1,6 @@
 public class Product {
+    private String name;
+    private double weight; //kilograms
     private ProductTrait materials;
     private ProductTrait company;
     private ProductTrait shipping;
