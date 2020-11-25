@@ -3,7 +3,7 @@ public class Materials extends ProductTrait{
         
     }
 
-    public CarbonUnits estimate(Product product) {
+    public double estimate(Product product) {
 
     }
 }

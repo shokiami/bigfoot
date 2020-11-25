@@ -1,3 +1,3 @@
 public interface ProductTrait {
-    public CarbonUnits estimate(Product product);
+    public double estimate(Product product);
 }

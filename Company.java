@@ -3,7 +3,7 @@ public class Company extends ProductTrait{
         
     }
 
-    public CarbonUnits estimate(Product product) {
+    public double estimate(Product product) {
 
     }
 }
