@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Shipping implements ProductTrait{
     private Map<String, Double> distances;
-    private Map<String, Integer> ratios = new HashMap<>();
+    private Map<String, Integer> ratios;
 
     public Shipping(Map<String, Double> distances) {
         this.distances = new HashMap<String, Double>(distances);
