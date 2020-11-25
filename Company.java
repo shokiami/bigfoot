@@ -1,4 +1,4 @@
-public class Company extends ProductTrait{
+public class Company implements ProductTrait{
     public Company() {
         
     }

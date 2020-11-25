@@ -16,4 +16,12 @@ public class Product {
     public void setShipping(Shipping shipping) {
         this.shipping = shipping;
     }
+
+    public String getName(){
+        return name;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
 }
