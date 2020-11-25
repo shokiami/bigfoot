@@ -16,7 +16,7 @@ class Mat {
   }
   
   public double estimate(double kg) {
-    
+    return 0;
   }
   
   public String getName() {
@@ -50,20 +50,20 @@ class MatStorage {
 }
 
 public class Materials implements ProductTrait {
-  private Map<Mat,double> materials;
+  private Map<Mat,Double> materials;
   
   public Materials() {
-    materials = new HashMap<Mat,double>();
+    materials = new HashMap<Mat,Double>();
   }
   
-  public Materials(Mat<Mat,double> materials) {
+  public Materials(Map<Mat,Double> materials) {
     this.materials = materials;
   }
   
   public double estimate(Product product) {
     double total = 0;
-    for (Mat mat : materials) {
-      total += mat->estimate(product.getWeight());
+    for (Mat mat : materials.keySet()) {
+      total += mat.estimate(product.getWeight() * materials.get(mat));
     }
     return total;
   }

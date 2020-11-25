@@ -1,20 +1,32 @@
+import java.util.*;
+
 public class Product {
     private String name;
     private double weight; //kilograms
-    private ProductTrait materials;
-    private ProductTrait company;
-    private ProductTrait shipping;
-
-    public void setMaterials(Materials materials) {
-        this.materials = materials;
+    private List<ProductTrait> traits;
+    
+    public Product() {
+      traits = new ArrayList<ProductTrait>();
     }
-
-    public void setCompany(Company company) {
-        this.company = company;
+    
+    public <Trait extends ProductTrait> Trait getTrait(Class<Trait> clazz) {
+      for (ProductTrait trait : traits) {
+        if (clazz.isInstance(trait)) {
+          return clazz.cast(trait);
+        }
+      }
+      return null;
     }
-
-    public void setShipping(Shipping shipping) {
-        this.shipping = shipping;
+    
+    public <Trait extends ProductTrait> void setTrait(Trait newtrait) {
+      for (int i = 0; i < traits.size(); i ++) {
+        if (traits.get(i).getClass() == newtrait.getClass()) {
+          traits.set(i, (ProductTrait) newtrait);
+          return;
+        }
+      }
+      traits.add((ProductTrait) newtrait);
+      System.out.println(traits.size());
     }
 
     public String getName(){
