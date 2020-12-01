@@ -9,15 +9,18 @@ public class Product {
         traits = new ArrayList<ProductTrait>();
     }
     
-    public <Trait extends ProductTrait> Trait getTrait(Class<Trait> clazz) {
+    // returns the trait that is of the type passed in
+    public <Trait extends ProductTrait> Trait getTrait(Class<Trait> traitClass) {
         for (ProductTrait trait : traits) {
-            if (clazz.isInstance(trait)) {
-                return clazz.cast(trait);
+            if (traitClass.isInstance(trait)) {
+                return traitClass.cast(trait);
             }
         }
         return null;
     }
     
+    // adds a trait of type Trait, if a trait of the same type already
+    // exists then the new trait overwrites the old one
     public <Trait extends ProductTrait> void setTrait(Trait newtrait) {
         for (int i = 0; i < traits.size(); i ++) {
             if (traits.get(i).getClass() == newtrait.getClass()) {
@@ -28,15 +31,16 @@ public class Product {
         traits.add((ProductTrait) newtrait);
         System.out.println(traits.size());
     }
-
+    
     public String getName(){
         return name;
     }
-
+    
     public double getWeight() {
         return weight;
     }
     
+    // calculates the total carbon footprint of the product in kg co2
     public double estimate() {
         double total = 0;
         for (ProductTrait trait : traits) {
