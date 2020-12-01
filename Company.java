@@ -1,16 +1,25 @@
-import java.io.FileNotFoundException;
+import java.util.*;
 
 public class Company implements ProductTrait{
-    private String name;
+    private Product product;
     private Map<String, Integer> companyEmissions;
 
-    public Company(String name) throws FileNotFoundException {
-        Scanner input = new Scanner(new File("companies.tsv"));
-        
-        
+    public Company(Product product, CompanyData companyData){
+        this.product = product;
+        this.companyEmissions = companyData.getEmissions();
     }
 
-    public double estimate(Product product) {
-
+    public double estimate() {
+        if (companyEmissions.containsKey(product.getSellerName())) {
+            return companyEmissions.get(product.getSellerName());
+        } else {
+            double total = 0;
+            int num = 0;
+            for (String company : companyEmissions.keySet()) {
+                total += companyEmissions.get(company);
+                num++;
+            }
+            return total / num;
+        }
     }
 }
