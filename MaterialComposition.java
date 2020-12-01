@@ -5,14 +5,9 @@ public class MaterialComposition implements ProductTrait {
   private MaterialData data;
   private Product product;
   
-  public MaterialComposition(Product product, MaterialData data) {
-    materials = new HashMap<Material,Double>();
+  public MaterialComposition(Product product, MaterialData data, Map<Material,Double> materials) {
     this.product = product;
     this.data = data;
-  }
-  
-  public MaterialComposition(Product product, Map<Material,Double> materials) {
-    this.product = product;
     this.materials = materials;
   }
   
