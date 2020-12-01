@@ -3,6 +3,7 @@ import java.util.*;
 public class Product {
     private String name;
     private double weight; //kilograms
+    private String sellerName;
     private List<ProductTrait> traits;
     
     public Product() {
@@ -38,6 +39,10 @@ public class Product {
     
     public double getWeight() {
         return weight;
+    }
+
+    public String getSellerName() {
+        return sellerName;
     }
     
     // calculates the total carbon footprint of the product in kg co2
