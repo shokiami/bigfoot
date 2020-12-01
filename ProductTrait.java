@@ -1,3 +1,3 @@
 public interface ProductTrait {
-    public double estimate(Product product);
+    public double estimate();
 }

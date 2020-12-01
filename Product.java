@@ -6,27 +6,27 @@ public class Product {
     private List<ProductTrait> traits;
     
     public Product() {
-      traits = new ArrayList<ProductTrait>();
+        traits = new ArrayList<ProductTrait>();
     }
     
     public <Trait extends ProductTrait> Trait getTrait(Class<Trait> clazz) {
-      for (ProductTrait trait : traits) {
-        if (clazz.isInstance(trait)) {
-          return clazz.cast(trait);
+        for (ProductTrait trait : traits) {
+            if (clazz.isInstance(trait)) {
+                return clazz.cast(trait);
+            }
         }
-      }
-      return null;
+        return null;
     }
     
     public <Trait extends ProductTrait> void setTrait(Trait newtrait) {
-      for (int i = 0; i < traits.size(); i ++) {
-        if (traits.get(i).getClass() == newtrait.getClass()) {
-          traits.set(i, (ProductTrait) newtrait);
-          return;
+        for (int i = 0; i < traits.size(); i ++) {
+            if (traits.get(i).getClass() == newtrait.getClass()) {
+                traits.set(i, (ProductTrait) newtrait);
+                return;
+            }
         }
-      }
-      traits.add((ProductTrait) newtrait);
-      System.out.println(traits.size());
+        traits.add((ProductTrait) newtrait);
+        System.out.println(traits.size());
     }
 
     public String getName(){
@@ -35,5 +35,13 @@ public class Product {
 
     public double getWeight() {
         return weight;
+    }
+    
+    public double estimate() {
+        double total = 0;
+        for (ProductTrait trait : traits) {
+            total += trait.estimate();
+        }
+        return total;
     }
 }
