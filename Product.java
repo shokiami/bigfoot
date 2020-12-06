@@ -4,6 +4,7 @@ public class Product {
     private String name;
     private double weight; //kilograms
     private String sellerName;
+    private double price;
     private List<ProductTrait> traits;
     
     public Product() {
@@ -43,6 +44,10 @@ public class Product {
 
     public String getSellerName() {
         return sellerName;
+    }
+
+    public double getPrice() {
+        return price;
     }
     
     // calculates the total carbon footprint of the product in kg co2
