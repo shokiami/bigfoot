@@ -30,7 +30,6 @@ public class Product {
             }
         }
         traits.add((ProductTrait) newtrait);
-        System.out.println(traits.size());
     }
     
     public String getName(){

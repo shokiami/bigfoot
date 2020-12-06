@@ -1,24 +1,29 @@
 import java.util.*;
 
 class Material {
+  private String id;
+  private String category;
   private String name;
-  private Set<String> otherNames;
   private double co2PerKg;
   
 	// fills in the material data from a file
-	// Format: name othername othername ... kg-co2/kg-material
+	// Format: unique-id category name kg-co2/kg-material
   public Material(Scanner ifile) {
+    id = ifile.next();
+    category = ifile.next();
     name = ifile.next();
-		otherNames = new HashSet<String>();
-		while (!ifile.hasNextDouble()) {
-			otherNames.add(ifile.next());
-		}
+    if (name.charAt(0) == '"') {
+      name = name.substring(1, name.length()-1);
+    }
+    System.out.println(name);
+    //System.out.println(ifile.next() + ";");
 		co2PerKg = ifile.nextDouble();
   }
   
-  public Material(String name, Set<String> otherNames, double co2PerKg) {
+  public Material(String id, String category, String name, double co2PerKg) {
+    this.id = id;
+    this.category = category;
     this.name = name;
-    this.otherNames = otherNames;
     this.co2PerKg = co2PerKg;
   }
   
@@ -31,7 +36,11 @@ class Material {
     return name;
   }
   
-  public Set<String> getOtherNames() {
-    return otherNames;
+  public String getCategory() {
+    return category;
+  }
+  
+  public String getId() {
+    return id;
   }
 }
