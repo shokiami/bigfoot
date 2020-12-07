@@ -2,28 +2,28 @@ import java.io.*;
 import java.util.*;
 
 public class CompanyData{
-    private Map<String, Integer> companyEmissions;
-    private double averageEmissions;
+    private Map<String, Integer> carbonIntensityMetrics; // kg/$
+    private double averageCarbonIntensityMetric;
 
     public CompanyData() throws FileNotFoundException {
-        companyEmissions = new HashMap<>();
+        carbonIntensityMetrics = new HashMap<>();
         Scanner input = new Scanner(new File("companies.tsv"));
         while (input.hasNext()) {
-            companyEmissions.put(input.next(), input.nextInt());
+            carbonIntensityMetrics.put(input.next(), input.nextInt());
         }
         double total = 0;
         int num = 0;
-        for (String company : companyEmissions.keySet()) {
-            total += companyEmissions.get(company);
+        for (String company : carbonIntensityMetrics.keySet()) {
+            total += carbonIntensityMetrics.get(company);
             num++;
         }
-        averageEmissions = total / num;
+        averageCarbonIntensityMetric = total / num;
     }
 
-    public double getEmissions(String company) {
-        if (companyEmissions.containsKey(company)) {
-            return companyEmissions.get(company);
+    public double getCarbonIntensityMetric(String company) {
+        if (carbonIntensityMetrics.containsKey(company)) {
+            return carbonIntensityMetrics.get(company);
         }
-        return averageEmissions;
+        return averageCarbonIntensityMetric;
     }
 }

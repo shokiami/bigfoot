@@ -8,6 +8,6 @@ public class Company implements ProductTrait{
     }
 
     public double estimate() {
-        return companyData.getEmissions(product.getSellerName()) * product.getPrice();
+        return companyData.getCarbonIntensityMetric(product.getSellerName()) * product.getPrice();
     }
 }
