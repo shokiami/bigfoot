@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class CompanyData{
-    private Map<String, Integer> carbonIntensityMetrics; // kg/$
+    private Map<String, Integer> carbonIntensityMetrics; // kgCO2/$
     private double averageCarbonIntensityMetric;
 
     public CompanyData() throws FileNotFoundException {
