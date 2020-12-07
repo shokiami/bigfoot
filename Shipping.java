@@ -15,7 +15,7 @@ public class Shipping implements ProductTrait{
     public double estimate() {
         double result = 0;
         for (String method : distances.keySet()) {
-            result += shippingData.getRatio(method) * product.getWeight() * distances.get(method) / 1000000;
+            result += shippingData.getRatio(method) * product.getWeight() * distances.get(method);
         }
         return result;
     }

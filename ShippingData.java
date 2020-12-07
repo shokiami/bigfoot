@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class ShippingData{
-    private Map<String, Integer> ratios;
+    private Map<String, Integer> ratios; // kgCO2/kg-km
 
     public ShippingData() throws FileNotFoundException {
         ratios = new HashMap<>();
