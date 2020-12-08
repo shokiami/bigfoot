@@ -10,9 +10,14 @@ Plastic	PE	2.8
 Plastic	HDPE	3.4
 Plastic	ABS	3.8
 Plastic	PVC	2.5
+Plastic	Nylon	8
+Rubber	Average	6.6
 Paper	Average	1.1
 Cardboard	Average	0.8
 Glass	Average	0.75
 Cloth	Average	2.8
 Cloth	Cotton	2.55
 Cloth	Wool	3.35
+Cloth	Polyester	3
+Cloth	Leather	30
+Electronics	Average	500

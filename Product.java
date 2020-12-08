@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 
 public class Product {
     private String name;
@@ -60,5 +61,15 @@ public class Product {
             total += trait.estimate();
         }
         return total;
+    }
+    
+    public void breakdown(PrintStream out) {
+      double total = 0;
+      for (ProductTrait trait : traits) {
+        double val = trait.estimate();
+        out.println(trait.getClass().getName() + ": " + val);
+        total += val;
+      }
+      out.println("Total: " + total);
     }
 }

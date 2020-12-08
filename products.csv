@@ -1,26 +1,25 @@
-product traits,,,,shipping,,material composition,,,,,
-name,weight,seller,price,distance,method,materials,,,,,
-Double Braided Nylon Lightning to USB Cable,0.0136,Amazon,$11.99 ,,,Nylon,0.1,Rubber,0.7,Copper,0.2
-Women's Training Basketball Shoe,0.336,Nike,$159.99 ,,,Rubber,0.35,Leather,0.4,Leather,0.25
-Gaming Headset,0.3668,Logitech,$199.99 ,,,Plastic,0.6,Cloth,0.3,Metal,0.1
-White Copy Paper,9.07,Office Depot,$40.75 ,,,Paper,1,,,,
-Professionnel Resveratrol Vitamino Color Radiance Shampoo,0.4791,L'Oreal,$27.30 ,2735,air,Plastic,0.2,Shampoo,0.8,,
-Kleenex Professional Facial Tissue Cube,0.4535,Kimberly-Clark,$14 ,,,Paper,0.95,Cardboard,0.05,,
-Xbox Controller,0.272,Microsoft,$59.99 ,,,Plastic,0.5,Electronics,0.5,,
-Mirror Flatware Set,0.87,Williams-Sonoma,$49.95 ,,,Stainless Steel,1,,,,
-Colorblock Stripe Crew Socks,0.12,Gap,$7.95 ,,,Cotton,0.67,Nylon,0.33,,
-4 Door Flex Refrigerator,160,Samsung,"$3,499 ",,,Plastic,0.4,,,,
-,,,,,,,,,,,
-Office Chair,14,Ikea,$99.99 ,,,Steel,0.5,Plastic,0.35,Polyester,0.15
-Office Chair,13,Staples,$149.99 ,,,Steel,0.5,Plastic,0.35,Polyester,0.15
-Office Chair,27,Williams-Sonoma,"$1,695.00 ",,,Steel,0.5,Plastic,0.35,Leather,0.15
-Office Chair,23,Office Depot,$429.99 ,,,Steel,0.6,Plastic,0.25,Leather,0.15
-Office Chair,13,Amazon,$134.99 ,,,Steel,0.3,Plastic,0.55,Polyester,0.15
-,,,,,,,,,,,
-,,,,,,,,,,,
-,,,,,,,,,,,
-,,,,,,,,,,,
-,,,,,,,,,,,
-,,,,,,,,,,,
-,,,,,1,,"$1,700.00 ",,,,
-,,,,,0.028349523,,2735.8848,,,,
+product traits,,,,shipping,,material composition,,,,,,done
+name,weight,seller,price,distance,method,materials,,,,,,
+Double Braided Nylon Lightning to USB Cable,0.0136,Amazon,11.99,,,Nylon,0.1,Rubber,0.7,Copper,0.2,
+Women's Training Basketball Shoe,0.336,Nike,159.99,,,Rubber,0.35,Leather,0.4,Leather,0.25,
+Gaming Headset,0.3668,Logitech,199.99,,,Plastic,0.6,Cloth,0.3,Metal,0.1,
+White Copy Paper,9.07,Office Depot,40.75,,,Paper,1,,,,,
+Professionnel Resveratrol Vitamino Color Radiance Shampoo,0.4791,L'Oreal,27.30,2735,air,Plastic,1,,,,,
+Kleenex Professional Facial Tissue Cube,0.4535,Kimberly-Clark,14.05,,,Paper,0.95,Cardboard,0.05,,,
+Xbox Controller,0.272,Microsoft,59.99,,,Plastic,0.5,Electronics,0.5,,,
+Mirror Flatware Set,0.87,Williams-Sonoma,49.95,,,Stainless Steel,1,,,,,
+Colorblock Stripe Crew Socks,0.12,Gap,7.95,,,Cotton,0.67,Nylon,0.33,,,
+4 Door Flex Refrigerator,160,Samsung,3499.00,,,Plastic,0.4,,,,,
+Office Chair,14,Ikea,99.99,,,Steel,0.5,Plastic,0.35,Polyester,0.15,
+Office Chair,13,Staples,149.99,,,Steel,0.5,Plastic,0.35,Polyester,0.15,
+Office Chair,27,Williams-Sonoma,1695.00,,,Steel,0.5,Plastic,0.4,Leather,0.1,
+Office Chair,23,Office Depot,429.99,,,Steel,0.6,Plastic,0.35,Leather,0.05,
+Office Chair,13,Amazon,134.99,,,Steel,0.3,Plastic,0.55,Polyester,0.15,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,1,,"$1,700.00 ",,,,,
+,,,,,0.028349523,,2735.8848,,,,,
