@@ -7,7 +7,11 @@ public class Product {
     private double price;
     private List<ProductTrait> traits;
     
-    public Product() {
+    public Product(String name, double weight, String sellerName, double price) {
+        this.name = name;
+        this.weight = weight;
+        this.sellerName = sellerName;
+        this.price = price;
         traits = new ArrayList<ProductTrait>();
     }
     

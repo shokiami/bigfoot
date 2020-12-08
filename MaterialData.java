@@ -20,7 +20,7 @@ class MaterialData {
 	// returns a material that matches the passed name
   public Material getByName(String name) {
     for (Material mat : allMats) {
-      if (mat.getName() == name || mat.getCategory() == name) {
+      if (mat.getName().equals(name) || mat.getCategory().equals(name)) {
         return mat;
       }
     }
