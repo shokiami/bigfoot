@@ -75,9 +75,9 @@ public class Product {
         double total = 0;
         for (ProductTrait trait : traits) {
             double val = trait.estimate();
-            out.println(trait.getClass().getName() + ": " + df.format(val));
+            out.println(trait.getClass().getName() + ": " + df.format(val) + "kg of CO2");
             total += val;
         }
-        out.println("Total: " + df.format(total));
+        out.println("Estimated Carbon Footprint: " + df.format(total) + "kg of CO2");
     }
 }
