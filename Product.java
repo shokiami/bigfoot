@@ -1,5 +1,6 @@
 import java.util.*;
 import java.io.*;
+import java.text.*;
 
 public class Product {
     private String name;
@@ -70,12 +71,13 @@ public class Product {
     // with each traits sub total, and the final total. This is printed
     // to the PrintStream parameter, which cannot be null.
     public void breakdown(PrintStream out) {
-      double total = 0;
-      for (ProductTrait trait : traits) {
-        double val = trait.estimate();
-        out.println(trait.getClass().getName() + ": " + val);
-        total += val;
-      }
-      out.println("Total: " + total);
+        DecimalFormat df = new DecimalFormat("####0.00");
+        double total = 0;
+        for (ProductTrait trait : traits) {
+            double val = trait.estimate();
+            out.println(trait.getClass().getName() + ": " + df.format(val));
+            total += val;
+        }
+        out.println("Total: " + df.format(total));
     }
 }

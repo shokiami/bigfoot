@@ -16,6 +16,7 @@ public class Main {
 		input.nextLine();
 		MaterialData materialdata = new MaterialData(new Scanner(new File("materials.tsv")));
 		CompanyData companydata = new CompanyData();
+		ShippingData shippingdata = new ShippingData();
 		
 		while (input.hasNext()) {
 			String name = input.next();
@@ -24,8 +25,7 @@ public class Main {
 			double price = input.nextDouble();
 			System.out.println("Product: " + name + " by " + seller);
 			Product product = new Product(name, weight, seller, price);
-			input.next();
-			input.next();
+			double distance = input.nextDouble();
 			
 			Map<Material,Double> materials = new HashMap<Material,Double>();
 			String matname = input.next();
@@ -36,8 +36,8 @@ public class Main {
 			
 			product.setTrait(new MaterialComposition(product, materialdata, materials));
 			product.setTrait(new Company(product, companydata));
+			product.setTrait(new Shipping(product, distance, shippingdata));
 			
-			//System.out.println("Co2: " + product.estimate());
 			product.breakdown(System.out);
 			System.out.println();
 			input.nextLine();
@@ -82,18 +82,13 @@ public class Main {
 					materials.put(mat, fraction);
 				}
 			}
-			
 			product.setTrait(new MaterialComposition(product, materialdata, materials));
+			
 			product.setTrait(new Company(product, companydata));
 			
-			Map<String,Double> distances = new HashMap<String,Double>();
-			String[] types = {"air", "road", "rail", "sea"};
-			for (String type : types) {
-				System.out.print("How long did the product travel by " + type + " (km): ");
-				distances.put(type, input.nextDouble());
-			}
-			
-			product.setTrait(new Shipping(product, distances, shippingdata));
+			System.out.print("What was the approximate shipping distance (km): ");
+			double distance =  input.nextDouble();
+			product.setTrait(new Shipping(product, distance, shippingdata));
 			
 			System.out.println("Carbon footprint (kg CO2): " + product.estimate());
 			System.out.println("Breakdown:");
