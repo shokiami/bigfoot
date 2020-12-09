@@ -8,6 +8,9 @@ public class Product {
     private double price;
     private List<ProductTrait> traits;
     
+    // Constructs the product with the four essential attributes, name, weight, sellerName
+    // and price. name and sellerName cannot be null and weight and price should be positive
+    // numbers
     public Product(String name, double weight, String sellerName, double price) {
         this.name = name;
         this.weight = weight;
@@ -63,6 +66,9 @@ public class Product {
         return total;
     }
     
+    // this method print a breakdown of the calculated carbon footprint,
+    // with each traits sub total, and the final total. This is printed
+    // to the PrintStream parameter, which cannot be null.
     public void breakdown(PrintStream out) {
       double total = 0;
       for (ProductTrait trait : traits) {

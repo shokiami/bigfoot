@@ -1,8 +1,12 @@
+// This class holds static material data that is needed for every material
+// object, and so it is constructed seperatley to avoid unnessisary reading.
+
 import java.util.*;
 
 class MaterialData {
   private List<Material> allMats;
   
+  // constructs the instance with a prefilled list of materials.
   public MaterialData(List<Material> allMats) {
     this.allMats = allMats;
   }

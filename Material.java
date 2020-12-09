@@ -1,3 +1,8 @@
+// This class is a class that represents a type of material, (ie Steel or Plastic).
+// It contains the relevant data about the material type, including the name,
+// the category the material is considered in (ie Metal, Fabric) and the carbon
+// footprint per kg.
+
 import java.util.*;
 
 class Material {
@@ -16,6 +21,8 @@ class Material {
 		co2PerKg = ifile.nextDouble();
   }
   
+  // constructs a material object with all of the attributes needed.
+  // category and name cannot be null.
   public Material(String category, String name, double co2PerKg) {
     this.category = category;
     this.name = name;
