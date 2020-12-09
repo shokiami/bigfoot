@@ -9,6 +9,18 @@ public class MaterialComposition implements ProductTrait {
     this.product = product;
     this.data = data;
     this.materials = materials;
+    averageMaterials();
+  }
+  
+  private void averageMaterials() {
+    double total = 0;
+    for (double value : materials.values()) {
+      total += value;
+    }
+    
+    for (Material mat : materials.keySet()) {
+      materials.put(mat, materials.get(mat)/total);
+    }
   }
   
   public double estimate() {
