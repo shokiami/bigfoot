@@ -2,17 +2,15 @@
 // object, and so it is constructed seperatley to avoid unnessisary reading.
 
 import java.util.*;
+import java.io.*;
 
 class MaterialData {
     private List<Material> allMats;
     
-    // constructs the instance with a prefilled list of materials.
-    public MaterialData(List<Material> allMats) {
-        this.allMats = allMats;
-    }
-    
-  	// fills the material list from a scanner, with lines of Material objects
-    public MaterialData(Scanner ifile) {
+  	// Constructs the materialdata object from a file called materials.tsv,
+    // where each line represents a material type
+    public MaterialData() throws FileNotFoundException {
+        Scanner ifile = new Scanner(new File("materials.tsv"));
         allMats = new ArrayList<Material>();
         ifile = ifile.useDelimiter("\t|\r\n|\n");
         ifile.nextLine();
@@ -24,7 +22,7 @@ class MaterialData {
   	// returns a material that matches the passed name
     public Material getByName(String name) {
         for (Material mat : allMats) {
-            if (mat.getName().equals(name) || mat.getCategory().equals(name)) {
+            if (mat.getName().equalsIgnoreCase(name) || mat.getCategory().equalsIgnoreCase(name)) {
                 return mat;
             }
         }

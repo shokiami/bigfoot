@@ -4,7 +4,7 @@ import java.io.*;
 public class Main {
 		public static void main(String[] args) throws FileNotFoundException {
 				if (args.length > 0) {
-						fromFile(new Scanner(new File("products.csv")));
+						fromFile(new Scanner(new File(args[0])));
 				} else {
 						fromUserInput();
 				}
@@ -14,7 +14,7 @@ public class Main {
 				input = input.useDelimiter(",|\r\n|\n");
 				input.nextLine();
 				input.nextLine();
-				MaterialData materialdata = new MaterialData(new Scanner(new File("materials.tsv")));
+				MaterialData materialdata = new MaterialData();
 				CompanyData companydata = new CompanyData();
 				ShippingData shippingdata = new ShippingData();
 				
@@ -45,7 +45,7 @@ public class Main {
 		}
 		
 		public static void fromUserInput() throws FileNotFoundException {
-				MaterialData materialdata = new MaterialData(new Scanner(new File("materials.tsv")));
+				MaterialData materialdata = new MaterialData();
 				CompanyData companydata = new CompanyData();
 				ShippingData shippingdata = new ShippingData();
 				boolean reading = true;
@@ -79,7 +79,11 @@ public class Main {
 										double fraction = input.nextDouble();
 										input.nextLine();
 										total += fraction;
-										materials.put(mat, fraction);
+										if (materials.containsKey(mat)) {
+												materials.put(mat, materials.get(mat) + fraction);
+										} else {
+												materials.put(mat, fraction);
+										}
 								}
 						}
 						product.setTrait(new MaterialComposition(product, materialdata, materials));

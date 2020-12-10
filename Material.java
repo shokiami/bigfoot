@@ -11,7 +11,7 @@ class Material {
     private double co2PerKg;
     
   	// fills in the material data from a file
-  	// Format: unique-id category name kg-co2/kg-material
+  	// file format: category [tab] name [tab] kg-co2/kg-material
     public Material(Scanner ifile) {
         category = ifile.next();
         name = ifile.next();
