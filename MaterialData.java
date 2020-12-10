@@ -28,4 +28,8 @@ class MaterialData {
         }
         return null;
     }
+    
+    public List<Material> getMaterialList() {
+      return allMats;
+    }
 }

@@ -72,11 +72,33 @@ public class Main {
 			
 			double total = 0;
 			Map<Material,Double> materials = new HashMap<Material,Double>();
+			System.out.println("Type help to get a list of the materials");
 			while (total < 1) {
 				System.out.print("Enter a material in your product: ");
-				Material mat = materialdata.getByName(input.nextLine());
-				if (mat == null) {
+				String matname = input.nextLine();
+				Material mat = materialdata.getByName(matname);
+				
+				if (mat == null && !matname.equalsIgnoreCase("help")) {
 					System.out.println("No material by that name was found.");
+				}
+				
+				if (mat == null) {
+					int i = 0;
+					System.out.print("Possible materials:\n  ");
+					for (Material othermat : materialdata.getMaterialList()) {
+						if (i % 6 == 5) {
+							System.out.print(", \n  ");
+						} else if (i != 0) {
+							System.out.print(", ");
+						}
+						if (othermat.getName().equals("Average")) {
+							System.out.print(othermat.getCategory());
+						} else {
+							System.out.print(othermat.getName());
+						}
+						i ++;
+					}
+					System.out.println();
 				} else {
 					System.out.print("Fraction of the product this material makes up (0 - 1): ");
 					double fraction = input.nextDouble();
