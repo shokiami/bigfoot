@@ -3,7 +3,7 @@
 // emissions from the company based on the carbon intensity metric
 // stored in the CompanyData object.
 
-public class Company implements ProductTrait{
+public class Company implements ProductTrait {
     private Product product;
     private CompanyData companyData;
     

@@ -17,7 +17,8 @@ public class MaterialComposition implements ProductTrait {
     //    Map<Material,Double> materials - a map of material objects, with a corresponding
     //                                     "weight" value. the values are normalized so the
     //                                     total is zero. cannot be null.
-    public MaterialComposition(Product product, MaterialData data, Map<Material,Double> materials) {
+    public MaterialComposition(
+            Product product, MaterialData data, Map<Material,Double> materials) {
         this.product = product;
         this.data = data;
         this.materials = materials;
@@ -32,8 +33,13 @@ public class MaterialComposition implements ProductTrait {
             total += value;
         }
         
-        for (Material mat : materials.keySet()) {
-            materials.put(mat, materials.get(mat)/total);
+        if (total == 0) {
+            materials.put(data.getByName("Plastic"), 1);
+            // plastic is the most common material
+        } else {
+            for (Material mat : materials.keySet()) {
+                materials.put(mat, materials.get(mat)/total);
+            }
         }
     }
     

@@ -1,3 +1,8 @@
+// This is the main class that represents all of the information about a product.
+// There are some required attributes, which are the name, the weight in kg,
+// the seller name, and the price in USD. Other traits can be added with the
+// setTrait method.
+
 import java.util.*;
 import java.io.*;
 import java.text.*;
@@ -20,7 +25,7 @@ public class Product {
         traits = new ArrayList<ProductTrait>();
     }
     
-    // returns the trait that is of the type passed in
+    // returns the trait that is of the type passed in.
     public <Trait extends ProductTrait> Trait getTrait(Class<Trait> traitClass) {
         for (ProductTrait trait : traits) {
             if (traitClass.isInstance(trait)) {
@@ -42,18 +47,22 @@ public class Product {
         traits.add((ProductTrait) newtrait);
     }
     
+    // returns the name of this product
     public String getName(){
         return name;
     }
     
+    // returns the weight in kg of this product
     public double getWeight() {
         return weight;
     }
-
+    
+    // returns the sellers name of this product
     public String getSellerName() {
         return sellerName;
     }
-
+    
+    // returns the price of this product
     public double getPrice() {
         return price;
     }

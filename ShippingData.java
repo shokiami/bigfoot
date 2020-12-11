@@ -1,3 +1,7 @@
+// This class holds static data that is needed for the Shipping product trait.
+// This class should be constructed only once in a program, and passed to any
+// created Shipping objects.
+
 import java.io.*;
 import java.util.*;
 

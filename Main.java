@@ -1,28 +1,38 @@
+// This is the main class, which provides a command line entry point to the algorithm.
+// there are two ways to run the algorithm, with a data table, and by hand. If this class
+// is run without any parameters, it will prompt the user for input. If a parameter is given,
+// the data is read from that file, in a csv style format.
+
 import java.util.*;
 import java.io.*;
 
 public class Main {
 	public static void main(String[] args) throws FileNotFoundException {
 		if (args.length > 0) {
-			String outpath;
+			String outPath;
 			if (args.length < 2) {
-				outpath = args[0].replace(".csv","-results.csv");
+				outPath = args[0].replace(".csv","") + "-results.csv";
 			} else {
-				outpath = args[1];
+				outPath = args[1];
 			}
-			fromFile(new Scanner(new File(args[0])), new PrintStream(new File(outpath)));
+			fromFile(new Scanner(new File(args[0])), new PrintStream(new File(outPath)));
 		} else {
 			fromUserInput();
 		}
 	}
 	
-	public static void fromFile(Scanner inputFile, PrintStream output) throws FileNotFoundException {
+	// this method reads in product data from a csv file.
+	// The file collumns should be formatted like:
+	// Name, Weight, Seller, Price, Shipping distance, Material 1,
+	// Material 1 fraction ... Material N, Material N fraction
+	public static void fromFile(Scanner inputFile, PrintStream output)
+			throws FileNotFoundException {
 		inputFile.nextLine();
 		inputFile.nextLine();
 		output.println("name,footprint");
-		MaterialData materialdata = new MaterialData();
-		CompanyData companydata = new CompanyData();
-		ShippingData shippingdata = new ShippingData();
+		MaterialData materialData = new MaterialData();
+		CompanyData companyData = new CompanyData();
+		ShippingData shippingData = new ShippingData();
 		
 		while (inputFile.hasNext()) {
 			Scanner input = new Scanner(inputFile.nextLine()).useDelimiter(",|\r\n|\n");
@@ -36,15 +46,15 @@ public class Main {
 			
 			Map<Material,Double> materials = new HashMap<Material,Double>();
 			while (input.hasNext()) {
-				String matname = input.next();
-				if (matname.length() != 0) {
-					materials.put(materialdata.getByName(matname), input.nextDouble());
+				String matName = input.next();
+				if (matName.length() != 0) {
+					materials.put(materialData.getByName(matName), input.nextDouble());
 				}
 			}
 			
-			product.setTrait(new MaterialComposition(product, materialdata, materials));
-			product.setTrait(new Company(product, companydata));
-			product.setTrait(new Shipping(product, distance, shippingdata));
+			product.setTrait(new MaterialComposition(product, materialData, materials));
+			product.setTrait(new Company(product, companyData));
+			product.setTrait(new Shipping(product, distance, shippingData));
 			
 			product.breakdown(System.out);
 			System.out.println();
@@ -53,7 +63,9 @@ public class Main {
 		}
 	}
 	
-	public static double safeNextDouble(Scanner scanner) {
+	// this method gets a double from a scanner, but doesn't throw an error if
+	// a non double is inputted and instead prints a message and prompts the user again.
+	private static double safeNextDouble(Scanner scanner) {
 		while (!scanner.hasNextDouble()) {
 			scanner.next();
 			System.out.print("You didn't enter a number. Please enter a number: ");
@@ -61,10 +73,12 @@ public class Main {
 		return scanner.nextDouble();
 	}
 	
+	// this method estimates products from user input, it will prompt
+	// the user for the nessissary parameters and run the estimation.
 	public static void fromUserInput() throws FileNotFoundException {
-		MaterialData materialdata = new MaterialData();
-		CompanyData companydata = new CompanyData();
-		ShippingData shippingdata = new ShippingData();
+		MaterialData materialData = new MaterialData();
+		CompanyData companyData = new CompanyData();
+		ShippingData shippingData = new ShippingData();
 		boolean reading = true;
 		Scanner input = new Scanner(System.in);
 
@@ -98,17 +112,17 @@ public class Main {
 			System.out.println("Type help to get a list of the materials.");
 			while (total < 1) {
 				System.out.print("Enter a material in your product: ");
-				String matname = input.nextLine();
-				Material mat = materialdata.getByName(matname);
+				String matName = input.nextLine();
+				Material mat = materialData.getByName(matName);
 				
-				if (mat == null && !matname.equalsIgnoreCase("help")) {
+				if (mat == null && !matName.equalsIgnoreCase("help")) {
 					System.out.println("No material by that name was found.");
 				}
 				
 				if (mat == null) {
 					int i = 0;
 					System.out.print("Possible materials:\n  ");
-					for (Material othermat : materialdata.getMaterialList()) {
+					for (Material othermat : materialData.getMaterialList()) {
 						if (i % 6 == 5) {
 							System.out.print(", \n  ");
 						} else if (i != 0) {
@@ -126,7 +140,8 @@ public class Main {
 					System.out.print("Fraction of the product this material makes up (0 - 1): ");
 					double fraction;
 					while ((fraction = safeNextDouble(input)) > 1 || fraction < 0) {
-						System.out.print("That was not between 0 and 1, please enter a number between 0 and 1: ");
+						System.out.print(
+							"That was not between 0 and 1, please enter a number between 0 and 1: ");
 					}
 					input.nextLine();
 					total += fraction;
@@ -137,9 +152,9 @@ public class Main {
 					}
 				}
 			}
-			product.setTrait(new MaterialComposition(product, materialdata, materials));
+			product.setTrait(new MaterialComposition(product, materialData, materials));
 			
-			product.setTrait(new Company(product, companydata));
+			product.setTrait(new Company(product, companyData));
 			
 			System.out.print("Approximate shipping distance (km): ");
 			double distance;
@@ -147,7 +162,7 @@ public class Main {
 				System.out.print("You entered a negative number. Please enter a positive number: ");
 			}
 			input.nextLine();
-			product.setTrait(new Shipping(product, distance, shippingdata));
+			product.setTrait(new Shipping(product, distance, shippingData));
 			
 			System.out.println();
 

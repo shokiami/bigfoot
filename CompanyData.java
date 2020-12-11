@@ -9,6 +9,8 @@ public class CompanyData{
     private Map<String, Double> carbonIntensityMetrics; // kgCO2/$
     private double averageCarbonIntensityMetric;
     
+    // constructs the CompanyData instance from a file called companies.tsv
+    // which holds the carbon emission data on companies.
     public CompanyData() throws FileNotFoundException {
         carbonIntensityMetrics = new HashMap<>();
         Scanner input = new Scanner(new File("companies.tsv"));
