@@ -16,16 +16,16 @@ public class Main {
 		}
 	}
 	
-	public static void fromFile(Scanner input, PrintStream output) throws FileNotFoundException {
-		input = input.useDelimiter(",|\r\n|\n");
-		input.nextLine();
-		input.nextLine();
+	public static void fromFile(Scanner inputFile, PrintStream output) throws FileNotFoundException {
+		inputFile.nextLine();
+		inputFile.nextLine();
 		output.println("name,footprint");
 		MaterialData materialdata = new MaterialData();
 		CompanyData companydata = new CompanyData();
 		ShippingData shippingdata = new ShippingData();
 		
-		while (input.hasNext()) {
+		while (inputFile.hasNext()) {
+			Scanner input = new Scanner(inputFile.nextLine()).useDelimiter(",|\r\n|\n");
 			String name = input.next();
 			double weight = input.nextDouble();
 			String seller = input.next();
@@ -35,10 +35,11 @@ public class Main {
 			double distance = input.nextDouble();
 			
 			Map<Material,Double> materials = new HashMap<Material,Double>();
-			String matname = input.next();
-			while (!matname.equals("")) {
-				materials.put(materialdata.getByName(matname), input.nextDouble());
-				matname = input.next();
+			while (input.hasNext()) {
+				String matname = input.next();
+				if (matname.length() != 0) {
+					materials.put(materialdata.getByName(matname), input.nextDouble());
+				}
 			}
 			
 			product.setTrait(new MaterialComposition(product, materialdata, materials));
@@ -49,7 +50,6 @@ public class Main {
 			System.out.println();
 			
 			output.println(name + "," + product.estimate());
-			input.nextLine();
 		}
 	}
 	

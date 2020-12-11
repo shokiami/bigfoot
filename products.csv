@@ -1,17 +1,17 @@
-product traits,,,,shipping,material composition,,,,,,done
-name,weight,seller,price,distance,materials,,,,,,
-Double Braided Nylon Lightning to USB Cable,0.0136,Amazon,11.99,11564,Nylon,0.1,Rubber,0.7,Copper,0.2,
-Women's Training Basketball Shoe,0.336,Nike,159.99,1245,Rubber,0.35,Leather,0.4,Leather,0.25,
-Gaming Headset,0.3668,Logitech,199.99,10398,Plastic,0.6,Cloth,0.3,Metal,0.1,
-White Copy Paper,9.07,Office Depot,40.75,1572,Paper,1,,,,,
-Professionnel Resveratrol Vitamino Color Radiance Shampoo,0.4791,L'Oreal,27.3,2104,Plastic,1,,,,,
-Kleenex Professional Facial Tissue Cube,0.4535,Kimberly-Clark,14.05,827,Paper,0.95,Cardboard,0.05,,,
-Xbox Controller,0.272,Microsoft,59.99,10440,Plastic,0.5,Electronics,0.5,,,
-Mirror Flatware Set,0.87,Williams-Sonoma,49.95,1298,Stainless Steel,1,,,,,
-Colorblock Stripe Crew Socks,0.12,Gap,7.95,6932,Cotton,0.67,Nylon,0.33,,,
-4 Door Flex Refrigerator,160,Samsung,3499,1126,Plastic,0.4,,,,,
-Office Chair,14,Ikea,99.99,12107,Steel,0.5,Plastic,0.35,Polyester,0.15,
-Office Chair,13,Staples,149.99,13330,Steel,0.5,Plastic,0.35,Polyester,0.15,
-Office Chair,27,Williams-Sonoma,1695,1298,Steel,0.5,Plastic,0.4,Leather,0.1,
-Office Chair,23,Office Depot,429.99,12781,Steel,0.6,Plastic,0.35,Leather,0.05,
-Office Chair,13,Amazon,134.99,13975,Steel,0.3,Plastic,0.55,Polyester,0.15,
+product traits,,,,shipping,material composition,,,,,
+name,weight,seller,price,distance,materials,,,,,
+Double Braided Nylon Lightning to USB Cable,0.0136,Amazon,11.99,11564,Nylon,0.1,Rubber,0.7,Copper,0.2
+Women's Training Basketball Shoe,0.336,Nike,159.99,1245,Rubber,0.35,Leather,0.4,Leather,0.25
+Gaming Headset,0.3668,Logitech,199.99,10398,Plastic,0.6,Cloth,0.3,Metal,0.1
+White Copy Paper,9.07,Office Depot,40.75,1572,Paper,1,,,,
+Professionnel Resveratrol Vitamino Color Radiance Shampoo,0.4791,L'Oreal,27.3,2104,Plastic,1,,,,
+Kleenex Professional Facial Tissue Cube,0.4535,Kimberly-Clark,14.05,827,Paper,0.95,Cardboard,0.05,,
+Xbox Controller,0.272,Microsoft,59.99,10440,Plastic,0.5,Electronics,0.5,,
+Mirror Flatware Set,0.87,Williams-Sonoma,49.95,1298,Stainless Steel,1,,,,
+Colorblock Stripe Crew Socks,0.12,Gap,7.95,6932,Cotton,0.67,Nylon,0.33,,
+4 Door Flex Refrigerator,160,Samsung,3499,1126,Plastic,0.4,,,,
+Office Chair,14,Ikea,99.99,12107,Steel,0.5,Plastic,0.35,Polyester,0.15
+Office Chair,13,Staples,149.99,13330,Steel,0.5,Plastic,0.35,Polyester,0.15
+Office Chair,27,Williams-Sonoma,1695,1298,Steel,0.5,Plastic,0.4,Leather,0.1
+Office Chair,23,Office Depot,429.99,12781,Steel,0.6,Plastic,0.35,Leather,0.05
+Office Chair,13,Amazon,134.99,13975,Steel,0.3,Plastic,0.55,Polyester,0.15

@@ -1,6 +1,6 @@
 Bigfoot! The algorithm that uncovers your carbon footprint on the web.
 
-Bigfoot estimates the carbon footprint of products you buy online!
+Bigfoot is an algorithm that estimates the carbon footprint of a product online.
 In order to estimate a product, there are certain attributes that are needed:
 
 The product name,
@@ -38,7 +38,7 @@ This is because some greenhouse gasses have higher warming potentials, so this i
 To use the input table method, you will need to create a csv table with the product information.
 The file products.csv is an example of how it should be formatted, but basically the order of the information is this:
 
-Name, Weight, Seller, Price, Shipping distance, Material 1, Material 1 fraction ... Material N, Material N fraction, (blank collumn)
+Name, Weight, Seller, Price, Shipping distance, Material 1, Material 1 fraction ... Material N, Material N fraction
 
 With the product table made, run the Main class with the table as a parameter.
 java Main products.csv
