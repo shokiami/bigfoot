@@ -23,8 +23,13 @@ We tried to find out where the product was manufactured, and from that we estima
 
 
 With the required information, you can now put your product into the algorithm!
-There are two different ways to interface with the program, by inputting the values for a product, or with an input table.
 
+First, compile the Main class:
+
+    javac Main.java
+
+
+There are two different ways to interface with the program, by inputting the values for a product, or with an input table.
 
 To input the values for a product, run the Main class with no parameters:
 
@@ -47,7 +52,7 @@ The file products.csv is an example of how it should be formatted, but basically
 
 Name, Weight, Seller, Price, Shipping distance, Material 1, Material 1 fraction ... Material N, Material N fraction
 
-With the product table made, run the Main class with the table as a parameter:
+With the product table made, run the Main class with the table as a parameter, for example:
 
     java Main products.csv
 
@@ -55,6 +60,6 @@ With the product table made, run the Main class with the table as a parameter:
 The program will print out a breakdown of every products emissions, and create a new table called <tablename>-results.csv with these emmissions.
 
 
-You can also specify the output table by giving a second parameter:
+You can also specify the output table by giving a second parameter, for example:
 
     java Main products.csv output.csv
