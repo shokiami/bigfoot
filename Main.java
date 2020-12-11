@@ -69,7 +69,7 @@ public class Main {
 		Scanner input = new Scanner(System.in);
 
 		System.out.println();
-		
+
 		while (reading) {
 			System.out.print("Product name: ");
 			String name = input.nextLine();
@@ -95,7 +95,7 @@ public class Main {
 			
 			double total = 0;
 			Map<Material,Double> materials = new HashMap<Material,Double>();
-			System.out.println("Type help to get a list of the materials");
+			System.out.println("Type help to get a list of the materials.");
 			while (total < 1) {
 				System.out.print("Enter a material in your product: ");
 				String matname = input.nextLine();
