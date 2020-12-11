@@ -7,7 +7,7 @@ Check out our video on YouTube: https://youtu.be/Lz8lJO79wuM
 Bigfoot is an algorithm that estimates the carbon footprint of a product online.
 In order to provide an estimation for a product, there are certain attributes that are needed:
 
-- Name
+- Product Name
 
 - Weight (kg)
 
