@@ -19,8 +19,9 @@ public class CompanyData {
         double total = 0;
         int num = 0;
         while (input.hasNext()) {
+            String name = input.next();
             double metric = input.nextDouble();
-            carbonIntensityMetrics.put(input.next(), metric);
+            carbonIntensityMetrics.put(name, metric);
             total += metric;
             num++;
         }
