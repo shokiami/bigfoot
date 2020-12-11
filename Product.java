@@ -15,7 +15,7 @@ public class Product {
     private List<ProductTrait> traits;
     
     // Constructs the product with the four essential attributes, name, weight, sellerName
-    // and price. name and sellerName cannot be null and weight and price should be positive
+    // and price. name and sellerName cannot be null, and weight and price should be positive
     // numbers
     public Product(String name, double weight, String sellerName, double price) {
         this.name = name;
@@ -25,7 +25,7 @@ public class Product {
         traits = new ArrayList<ProductTrait>();
     }
     
-    // returns the trait that is of the type passed in.
+    // Returns the trait that is of the class passed in.
     public <Trait extends ProductTrait> Trait getTrait(Class<Trait> traitClass) {
         for (ProductTrait trait : traits) {
             if (traitClass.isInstance(trait)) {
@@ -35,8 +35,9 @@ public class Product {
         return null;
     }
     
-    // adds a trait of type Trait, if a trait of the same type already
-    // exists then the new trait overwrites the old one
+    // Adds a trait of type Trait. Type Trait must inherit from ProductTrait.
+    // if a trait of the same type already exists in this product,
+    // then the new trait overwrites the old one.
     public <Trait extends ProductTrait> void setTrait(Trait newtrait) {
         for (int i = 0; i < traits.size(); i ++) {
             if (traits.get(i).getClass() == newtrait.getClass()) {
