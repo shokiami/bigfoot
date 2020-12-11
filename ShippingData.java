@@ -9,7 +9,9 @@ public class ShippingData{
     private Map<String, Double> ratios; // kgCO2/kg-km
     private List<Integer> distances;
     private List<Map<String, Double>> compositions;
-
+    
+    // Constructs the ShippingData object using data from files
+    // shippingModes.tsv and shippingDistances.tsv
     public ShippingData() throws FileNotFoundException {
         ratios = new HashMap<>();
         Scanner input1 = new Scanner(new File("shippingModes.tsv"));
@@ -28,11 +30,15 @@ public class ShippingData{
             compositions.add(composition);
         }
     }
-
+    
+    // Returns the ratios for every distance given a mode of transport
+    // "road", "rail", "sea" ... the parameter method cannot be null.
     public double getRatio(String method) {
         return ratios.get(method);
     }
-
+    
+    // Returns the different modes of transport, and the percentages of a trip,
+    // given the distance traveled. The distance should not be negative
     public Map<String, Double> getComposition(double distance) {
         int index = distances.size() - 1;
         while (distance < distances.get(index)) {

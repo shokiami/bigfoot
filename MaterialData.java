@@ -21,8 +21,9 @@ class MaterialData {
     		}
     }
     
-  	// returns a material that either has the same name as the parameter
-    // or the same category as the parameter
+  	// Returns a material that either has the same name as the parameter
+    // or the same category as the parameter.
+    // The parameter name cannot be null.
     public Material getByName(String name) {
         for (Material mat : allMats) {
             if (mat.getName().equalsIgnoreCase(name)

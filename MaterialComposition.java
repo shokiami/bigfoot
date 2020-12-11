@@ -25,7 +25,7 @@ public class MaterialComposition implements ProductTrait {
         averageMaterials();
     }
   
-    // a private method that normalizes the material map. this should
+    // Q private method that normalizes the material map. This should
     // be run every time the map is changed.
     private void averageMaterials() {
         double total = 0;
@@ -34,8 +34,9 @@ public class MaterialComposition implements ProductTrait {
         }
         
         if (total == 0) {
-            materials.put(data.getByName("Plastic"), 1);
-            // plastic is the most common material
+            materials.put(data.getByName("Plastic"), 1.0);
+            // plastic is the most common material, and its
+            // carbon value is a good average
         } else {
             for (Material mat : materials.keySet()) {
                 materials.put(mat, materials.get(mat)/total);

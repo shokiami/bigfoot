@@ -25,6 +25,7 @@ public class Main {
 	// The file collumns should be formatted like:
 	// Name, Weight, Seller, Price, Shipping distance, Material 1,
 	// Material 1 fraction ... Material N, Material N fraction
+	// Both the scanners should not be null
 	public static void fromFile(Scanner inputFile, PrintStream output)
 			throws FileNotFoundException {
 		inputFile.nextLine();
@@ -63,8 +64,9 @@ public class Main {
 		}
 	}
 	
-	// this method gets a double from a scanner, but doesn't throw an error if
+	// This method gets a double from a scanner, but doesn't throw an error if
 	// a non double is inputted and instead prints a message and prompts the user again.
+	// The scanner cannot be null.
 	private static double safeNextDouble(Scanner scanner) {
 		while (!scanner.hasNextDouble()) {
 			scanner.next();
@@ -73,7 +75,7 @@ public class Main {
 		return scanner.nextDouble();
 	}
 	
-	// this method estimates products from user input, it will prompt
+	// This method estimates products from user input, it will prompt
 	// the user for the nessissary parameters and run the estimation.
 	public static void fromUserInput() throws FileNotFoundException {
 		MaterialData materialData = new MaterialData();

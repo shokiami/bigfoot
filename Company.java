@@ -8,13 +8,13 @@ public class Company implements ProductTrait {
     private CompanyData companyData;
     
     // Constructs the Company object with a product and a referance to
-    // a company data object. Both of these shouldn't be null
+    // a company data object. Both of these shouldn't be null.
     public Company(Product product, CompanyData companyData){
         this.product = product;
         this.companyData = companyData;
     }
     
-    // returns the carbon footprint estimate in kg of CO2
+    // Returns the carbon footprint estimate in kg of CO2.
     public double estimate() {
         return companyData.getCarbonIntensityMetric(product.getSellerName()) * product.getPrice();
     }

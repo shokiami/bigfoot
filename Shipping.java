@@ -10,7 +10,7 @@ public class Shipping implements ProductTrait{
     private ShippingData shippingData;
     
     // The constructor takes in a Product reference (cannot be null),
-    // the distance that the product is travelling in km,
+    // the distance that the product is travelling in km (not negative),
     // and a ShippingData reference (cannot be null)
     public Shipping(Product product, double distance, ShippingData shippingData) {
         this.product = product;
