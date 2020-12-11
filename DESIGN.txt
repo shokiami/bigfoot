@@ -39,10 +39,10 @@ new trait instance will overwrite the old one. With these methods, the traits ar
 product, and at last, the Product object is complete!
 
 
-Going more in depth on how each class works, I will start with the MaterialComposition class. 
-When I created this class, I knew I wanted to have an external file with all of the materials 
-and their carbon footprints. I didn't want to have to load it in every time I constructed a 
-MaterialComposition object. To solve this, I created the MaterialData object, which holds all 
+Going more in depth on how each class works, we will start with the MaterialComposition class. 
+When we created this class, we knew we wanted to have an external file with all of the materials 
+and their carbon footprints. We didn't want to have to load it in every time we constructed a 
+MaterialComposition object. To solve this, we created the MaterialData object, which holds all 
 static data that is constant between products. The MaterialData object contains a list of 
 Material objects, each representing a different type of material. Each material object has a 
 name, category, and the carbon footprint. The materials also have an estimate method, which 
@@ -50,7 +50,7 @@ takes a weight and returns the carbon footprint of that weight of material. Mate
 gotten from the MateriaData object with their name, which searches for a matching material.
 
 In usage, the MaterialData object is created when the program starts, which loads in all of 
-the data. The constructor of a MaterialComposition object includes a referance to the 
+the data. The constructor of a MaterialComposition object includes a reference to the 
 MaterialData object, which lets the MaterialComposition have access to the data. This method 
 has a lot of benefits, other than just the reduced reading and processing. It means that all 
 materials used are the same references, all pointing to the materials in the MaterialData 
@@ -64,3 +64,65 @@ a Map of Materials to doubles. The map represents the composition, with each mat
 fraction of the product. When estimate is called, the product's weight is multiplied by all of 
 the material's fractions to get each materials weight, and estimate is called on each material 
 with their weight. The total emissions is summed up to get the total, which is returned.
+
+
+The goal of the Company class is to simulate the carbon emissions due to manufacturing.
+For the Company class, similar to the MaterialComposition class, we knew that we wanted to 
+have an external file with all of the manufacturers and their carbon intensity metrics.
+The carbon intensity metric is the kilograms of carbon dioxide emissions per dollar revenue,
+and is what we found as the best way to scale our data by the size of the company as well as 
+the manufacturing costs of the product. As there was no available data sets online for this, 
+we decided to use the published reports by the individual companies themselves.
+
+When the program starts, a CompanyData object is created, and in the constructor, all of the
+carbon intensity metrics are organized in a map by company, and an average carbon intensity
+metric is also recorded. The reason for this average value is that since this data is the most
+difficult to scale in terms of available data online, we wanted to ensure that even if a user
+enters a manufacturer that is not in our data set, we could still provide an estimate even if
+it may not be as accurate. 
+
+With this data loaded in and ready, the Company class is ready to calculate. The constructor
+of the Company object includes a reference to the Product class which gives the Company class
+access to key attributes of the product, namely the product's seller name and price. The
+reason we differentiate between the seller and the manufacturer is that sites like Amazon and
+Ebay only provide information about the seller which can be different from the manufacturer.
+As sellers do not represent the carbon emissions due to the manufacturing of the product, our
+dataset is only comprised of manufacturers. The Company class also has a reference to a 
+CompanyData object, which provides access to the data in the form of a method which takes in a
+company name, and either provides the associated carbon intensity metric, if it exists, or the
+average carbon intensity metric. When estimate is called, the company class finds the carbon
+intensity metric of the seller and multiplies it by the price of the product to return the
+estimated carbon emissions, in kilograms, for the product.
+
+
+For the Shipping class, similar to the other two attribute classes, we knew that we wanted to
+have external files to keep track of the data. However, unlie the two previous classes, there
+are two data sets involved with calculating the carbon emissions due to shipping. The first
+data set represents the different modes of transportation (road, rail, sea, air, etc.) and
+there footprints. The units we decided to use for this were kilograms of CO2 per kilogram of
+freight kilometers shipped. The reason we wanted to differentiate between the different modes
+is not only because they yeild different carbon footprints, but also because the prevalence
+of these various modes of transport depends on the shipping distance. For example, shorter
+shipping distances often rely mainly on road transportation, while longer distances will
+inevitably rely on air transportation. This is where our second data set comes in, which maps
+various commute distance ranges to the average composition of the trip by the different modes
+of transportation.
+
+When the program starts, a ShippingData object is created, and in the constructor, the
+carbon emissions data for the different modes of transportation are stored in a map, and the
+distance ranges and relevant compositions are stored in two lists where each index corresponds
+to each other. The reason why we used this two list set up instead of a map is that the
+distance ranges are represented by a single distance, where the range is from that distance
+to the distance of the next index, order of the entities matter.
+
+With this data loaded in and ready, the Shipping class is ready to calculate. The constructor
+of the Shipping object includes a reference to the Product class which gives the Shipping
+class access to key attributes of the product, namely the product's weight. The Shipping class
+also takes the shipping distance as a parameter which will be used in the estmiate method.
+Finally, the Shipping class also includes a reference to the ShippingData object which
+provides access to the data in the form of two methods; one which access the carbon emissions
+data for the various modes of transportation, and one which returns the composition of the
+trip depending on the shipping distance. When estimate is called, the Shipping object finds
+the carbon emissions due to each mode of transport by multiplying its ratio by the product's
+weight as well as its composition of the trip by the shipping distance. These emissions are
+totalled to return the estimated carbon emissions due to shipping.
