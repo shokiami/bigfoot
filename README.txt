@@ -46,9 +46,9 @@ Enter in all of the values, all of the units should be stated but make sure to u
 When entering the material composition, the program will keep prompting you for a material until the total fraction you have given is 1.
 For a list of all possible materials, you can type help when it asks for a material.
 
-When you are done entering the data, it should print out the total emmissions, with a breakdown of what contributed.
-The results are in kg of CO2 equivalents, which means that the emmissions from this product have a warming potential of that many kg CO2.
-This is because some greenhouse gasses have higher warming potentials, so this is a way to account for all emmissions.
+When you are done entering the data, it should print out the total emissions, with a breakdown of what contributed.
+The results are in kg of CO2 equivalents, which means that the emissions from this product have a warming potential of that many kg CO2.
+This is because some greenhouse gasses have higher warming potentials, so this is a way to account for all emissions.
 
 
 To use the input table method, you will need to create a csv table with the product information.
@@ -60,11 +60,11 @@ With the product table made, run the Main class with the table as a parameter, f
 
     java Main products.csv
 
-The program will print out a breakdown of every products emissions, and create a new table called <input_tablename>-results.csv with these emmissions.
+The program will print out a breakdown of every products emissions, and create a new table called <tablename>-results.csv with these emissions.
 
 
 You can also specify the output table by giving a second parameter, for example:
 
     java Main products.csv output.csv
 
-The program will print out a breakdown of every products emissions, and create a new table called <output_tablename>.csv with these emmissions.
+The program will print out a breakdown of every products emissions, and create a new table called output.csv with these emissions.
