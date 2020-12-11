@@ -28,7 +28,7 @@ us to learn more than we would have otherwise. In addition, because we chose the
 interested and invested in the project more, which made us work harder on it.
 
 
-Sho Kiami:
+Shosuke Kiami:
 
 One thing that I learned a lot about is reading and writing from files, and how to use datafiles
 well in a project. In this project we had to do a lot of work with data files in different formats.
