@@ -45,7 +45,7 @@ with and what we worked on, I was much more intruiged by the topics, and this ma
 to the project.
 
 I think the biggest challenge we faced was finding the right data to use in our algorithm. To work
-well our project needed a lot of data about the carbon footprints of materials, shipping methods, manufacturing
+well, our project needed a lot of data about the carbon footprints of materials, shipping methods, manufacturing
 methods, and many other things, and the fact was that we couldn't find any datasets that had this kind
 of data available to the public. Most of the large datasets we found that looked really promising had
 some kind of subscription fee or cost, and it really slowed our progress down. Especially on the Company
@@ -53,6 +53,6 @@ side of things, I looked for a long time for a dataset with company carbon emiss
 available dataset. In the end we had to compile the company data by hand, which was rather time consuming.
 
 I think that working in a group was very helpful for both our learning. It was great to have someone else
-to look over my code, and most times we caught each others mistakes, or knew something that would work
-for the other persons problem. Especially when we were designing the class structure, it was very
-helpful to have another person to bounce ideas off of and support me through my learning and experimentation.
+look over my code, and most times we caught each others' mistakes, or had helpful suggestions to share. 
+Especially when we were designing the class structure, it was very helpful to have another person to bounce
+ideas off of, and to ultimately support me through my learning and experimentation.
