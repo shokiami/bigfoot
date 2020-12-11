@@ -4,16 +4,23 @@ import java.io.*;
 public class Main {
 	public static void main(String[] args) throws FileNotFoundException {
 		if (args.length > 0) {
-			fromFile(new Scanner(new File(args[0])));
+			String outpath;
+			if (args.length < 2) {
+				outpath = args[0].replace(".csv","-results.csv");
+			} else {
+				outpath = args[1];
+			}
+			fromFile(new Scanner(new File(args[0])), new PrintStream(new File(outpath)));
 		} else {
 			fromUserInput();
 		}
 	}
-		
-	public static void fromFile(Scanner input) throws FileNotFoundException {
+	
+	public static void fromFile(Scanner input, PrintStream output) throws FileNotFoundException {
 		input = input.useDelimiter(",|\r\n|\n");
 		input.nextLine();
 		input.nextLine();
+		output.println("name,footprint");
 		MaterialData materialdata = new MaterialData();
 		CompanyData companydata = new CompanyData();
 		ShippingData shippingdata = new ShippingData();
@@ -40,8 +47,18 @@ public class Main {
 			
 			product.breakdown(System.out);
 			System.out.println();
+			
+			output.println(name + "," + product.estimate());
 			input.nextLine();
 		}
+	}
+	
+	public static double safeNextDouble(Scanner scanner) {
+		while (!scanner.hasNextDouble()) {
+			scanner.next();
+			System.out.print("You didn't enter a number. Please enter a number: ");
+		}
+		return scanner.nextDouble();
 	}
 	
 	public static void fromUserInput() throws FileNotFoundException {
@@ -58,14 +75,20 @@ public class Main {
 			String name = input.nextLine();
 			
 			System.out.print("Product weight (kg): ");
-			double weight = input.nextDouble();
+			double weight;
+			while ((weight = safeNextDouble(input)) < 0) {
+				System.out.print("You entered a negative number. Please enter a positive number: ");
+			}
 			input.nextLine();
 			
 			System.out.print("Seller name: ");
 			String seller = input.nextLine();
 			
 			System.out.print("Product price ($): ");
-			double price = input.nextDouble();
+			double price;
+			while ((price = safeNextDouble(input)) < 0) {
+				System.out.print("You entered a negative number. Please enter a positive number: ");
+			}
 			input.nextLine();
 			
 			Product product = new Product(name, weight, seller, price);
@@ -101,7 +124,10 @@ public class Main {
 					System.out.println();
 				} else {
 					System.out.print("Fraction of the product this material makes up (0 - 1): ");
-					double fraction = input.nextDouble();
+					double fraction;
+					while ((fraction = safeNextDouble(input)) > 1 || fraction < 0) {
+						System.out.print("That was not between 0 and 1, please enter a number between 0 and 1: ");
+					}
 					input.nextLine();
 					total += fraction;
 					if (materials.containsKey(mat)) {
@@ -116,7 +142,10 @@ public class Main {
 			product.setTrait(new Company(product, companydata));
 			
 			System.out.print("Approximate shipping distance (km): ");
-			double distance =  input.nextDouble();
+			double distance;
+			while ((distance = safeNextDouble(input)) < 0) {
+				System.out.print("You entered a negative number. Please enter a positive number: ");
+			}
 			input.nextLine();
 			product.setTrait(new Shipping(product, distance, shippingdata));
 			

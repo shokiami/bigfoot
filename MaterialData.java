@@ -13,7 +13,7 @@ class MaterialData {
         Scanner ifile = new Scanner(new File("materials.tsv"));
         allMats = new ArrayList<Material>();
         ifile = ifile.useDelimiter("\t|\r\n|\n");
-        ifile.nextLine();
+        //ifile.nextLine();
         while (ifile.hasNext()) {
       			allMats.add(new Material(ifile));
     		}
@@ -22,7 +22,8 @@ class MaterialData {
   	// returns a material that matches the passed name
     public Material getByName(String name) {
         for (Material mat : allMats) {
-            if (mat.getName().equalsIgnoreCase(name) || mat.getCategory().equalsIgnoreCase(name)) {
+            if (mat.getName().equalsIgnoreCase(name)
+                  || ( mat.getCategory().equalsIgnoreCase(name) && mat.getName().equals("Average"))) {
                 return mat;
             }
         }
