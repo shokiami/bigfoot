@@ -26,3 +26,33 @@ I think that the freedom to choose and design what we want was very helpful and 
 that I just said that it was a big challenge, but I don't see it as bad, I think that it pushed
 us to learn more than we would have otherwise. In addition, because we chose the topic, we were
 interested and invested in the project more, which made us work harder on it.
+
+
+Sho Kiami:
+
+One thing that I learned a lot about is reading and writing from files, and how to use datafiles
+well in a project. In this project we had to do a lot of work with data files in different formats.
+We made our own files, but we also had to parse other data files from datasets we found online
+and make them into a good format for our program. I also think I learned a lot more about the concept
+of abstraction. In class we talked about abstraction, and there were examples of it in projects,
+but after designing the classes in this project I think I have a much better understanding of how
+to design classes that abstract away their implementation, and how that helps when multiple people
+are working on the same project.
+
+I enjoyed having more freedom to choose what I was working on, I think that I was able to show
+my creativity in a way that I couldn't in the other assigments. Because I got to choose who I worked
+with and what we worked on, I was much more intruiged by the topics, and this made me much more commited
+to the project.
+
+I think the biggest challenge we faced was finding the right data to use in our algorithm. To work
+well our project needed a lot of data about the carbon footprints of materials, shipping methods, manufacturing
+methods, and many other things, and the fact was that we couldn't find any datasets that had this kind
+of data available to the public. Most of the large datasets we found that looked really promising had
+some kind of subscription fee or cost, and it really slowed our progress down. Especially on the Company
+side of things, I looked for a long time for a dataset with company carbon emissons, but there was no
+available dataset. In the end we had to compile the company data by hand, which was rather time consuming.
+
+I think that working in a group was very helpful for both our learning. It was great to have someone else
+to look over my code, and most times we caught each others mistakes, or knew something that would work
+for the other persons problem. Especially when we were designing the class structure, it was very
+helpful to have another person to bounce ideas off of and support me through my learning and experimentation.
