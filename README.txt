@@ -44,3 +44,5 @@ With the product table made, run the Main class with the table as a parameter.
 java Main products.csv
 
 The program will print out a breakdown of every products emissions, and create a new table called <tablename>-results.csv with these emmissions.
+You can also specify the output table by giving a second parameter.
+java Main products.csv output.csv
