@@ -1,7 +1,7 @@
 // This class calculates the carbon footprint of a products material composition.
 // The class is constructed with a map of materials and percentages, and with
 // this composition this class calculates the carbon footprint from the raw materials
-// only (not including manufacturing or transport)
+// only (not including manufacturing or transport).
 
 import java.util.*;
 
@@ -25,18 +25,17 @@ public class MaterialComposition implements ProductTrait {
         averageMaterials();
     }
   
-    // Q private method that normalizes the material map. This should
+    // A private method that normalizes the material map. This should
     // be run every time the map is changed.
     private void averageMaterials() {
         double total = 0;
         for (double value : materials.values()) {
             total += value;
         }
-        
         if (total == 0) {
             materials.put(data.getByName("Plastic"), 1.0);
-            // plastic is the most common material, and its
-            // carbon value is a good average
+            // Plastic is the most common material, so its
+            // carbon value is a good average.
         } else {
             for (Material mat : materials.keySet()) {
                 materials.put(mat, materials.get(mat)/total);

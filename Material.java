@@ -10,8 +10,8 @@ class Material {
     private String name;
     private double co2PerKg;
     
-  	// Fills in the material data from a file
-  	// File format: category [tab] name [tab] kg-co2/kg-material
+  	// Fills in the material data from a file.
+  	// File format: category [tab] name [tab] kg-co2/kg-material.
     public Material(Scanner ifile) {
         category = ifile.next();
         name = ifile.next();
@@ -30,17 +30,17 @@ class Material {
     }
     
   	// Returns the carbon footprint in kg co2 given a weight in kg.
-    // The weight should not be negative
+    // The weight should not be negative.
     public double estimate(double kg) {
         return co2PerKg * kg;
     }
     
-    // returns the name
+    // Returns the name.
     public String getName() {
         return name;
     }
     
-    // returns the category
+    // Returns the category.
     public String getCategory() {
         return category;
     }

@@ -10,12 +10,11 @@ class MaterialData {
     private List<Material> allMats;
     
   	// Constructs the materialdata object from a file called materials.tsv,
-    // where each line represents a material type
+    // where each line represents a material type.
     public MaterialData() throws FileNotFoundException {
         Scanner ifile = new Scanner(new File("materials.tsv"));
         allMats = new ArrayList<Material>();
         ifile = ifile.useDelimiter("\t|\r\n|\n");
-        //ifile.nextLine();
         while (ifile.hasNext()) {
       			allMats.add(new Material(ifile));
     		}
@@ -35,7 +34,7 @@ class MaterialData {
         return null;
     }
     
-    // returns a list of all materials in the dataset
+    // Returns a list of all materials in the dataset.
     public List<Material> getMaterialList() {
       return allMats;
     }

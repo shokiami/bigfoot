@@ -11,14 +11,14 @@ public class Shipping implements ProductTrait{
     
     // The constructor takes in a Product reference (cannot be null),
     // the distance that the product is travelling in km (not negative),
-    // and a ShippingData reference (cannot be null)
+    // and a ShippingData reference (cannot be null).
     public Shipping(Product product, double distance, ShippingData shippingData) {
         this.product = product;
         this.distance = distance;
         this.shippingData = shippingData;
     }
 
-    // Returns the estimated footprint of this shipping trip, in kg CO2
+    // Returns the estimated footprint of this shipping trip, in kg CO2.
     public double estimate() {
         Map<String, Double> composition = shippingData.getComposition(distance);
         double result = 0;

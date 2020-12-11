@@ -8,7 +8,7 @@ import java.io.*;
 import java.util.*;
 
 public class CompanyData {
-    private Map<String, Double> carbonIntensityMetrics; // kgCO2/$
+    private Map<String, Double> carbonIntensityMetrics;
     private double averageCarbonIntensityMetric;
     
     // Constructs the CompanyData instance from a file called companies.tsv

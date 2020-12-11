@@ -9,14 +9,14 @@ import java.text.*;
 
 public class Product {
     private String name;
-    private double weight; //kilograms
+    private double weight;
     private String sellerName;
     private double price;
     private List<ProductTrait> traits;
     
     // Constructs the product with the four essential attributes, name, weight, sellerName
-    // and price. name and sellerName cannot be null, and weight and price should be positive
-    // numbers
+    // and price. Both name and sellerName cannot be null, and weight and price should be
+    // positive numbers.
     public Product(String name, double weight, String sellerName, double price) {
         this.name = name;
         this.weight = weight;
@@ -48,27 +48,27 @@ public class Product {
         traits.add((ProductTrait) newtrait);
     }
     
-    // returns the name of this product
+    // Returns the name of this product.
     public String getName(){
         return name;
     }
     
-    // returns the weight in kg of this product
+    // Returns the weight in kg of this product.
     public double getWeight() {
         return weight;
     }
     
-    // returns the sellers name of this product
+    // Returns the sellers name of this product.
     public String getSellerName() {
         return sellerName;
     }
     
-    // returns the price of this product
+    // Returns the price of this product.
     public double getPrice() {
         return price;
     }
     
-    // calculates the total carbon footprint of the product in kg co2
+    // Calculates the total carbon footprint of the product in kilograms of CO2.
     public double estimate() {
         double total = 0;
         for (ProductTrait trait : traits) {
@@ -77,7 +77,7 @@ public class Product {
         return total;
     }
     
-    // this method print a breakdown of the calculated carbon footprint,
+    // This method print a breakdown of the calculated carbon footprint,
     // with each traits sub total, and the final total. This is printed
     // to the PrintStream parameter, which cannot be null.
     public void breakdown(PrintStream out) {

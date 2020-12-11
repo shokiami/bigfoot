@@ -11,7 +11,7 @@ public class ShippingData{
     private List<Map<String, Double>> compositions;
     
     // Constructs the ShippingData object using data from files
-    // shippingModes.tsv and shippingDistances.tsv
+    // shippingModes.tsv and shippingDistances.tsv.
     public ShippingData() throws FileNotFoundException {
         ratios = new HashMap<>();
         Scanner input1 = new Scanner(new File("shippingModes.tsv"));
@@ -38,7 +38,7 @@ public class ShippingData{
     }
     
     // Returns the different modes of transport, and the percentages of a trip,
-    // given the distance traveled. The distance should not be negative
+    // given the distance traveled. The distance should not be negative.
     public Map<String, Double> getComposition(double distance) {
         int index = distances.size() - 1;
         while (distance < distances.get(index)) {
